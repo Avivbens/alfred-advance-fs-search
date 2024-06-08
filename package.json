@@ -1,8 +1,13 @@
 {
     "name": "alfred-advance-fs-search",
     "version": "0.0.1",
-    "description": "description",
-    "keywords": [],
+    "description": "Alfred workflow to search files in the file system & open them with a variety of applications",
+    "keywords": [
+        "alfred",
+        "workflow",
+        "file-system",
+        "search"
+    ],
     "homepage": "https://github.com/Avivbens/alfred-advance-fs-search",
     "repository": {
         "type": "git",
@@ -26,7 +31,7 @@
     ],
     "scripts": {
         "prebuild": "rm -rf ./lib",
-        "build": "tsc -p ./src/tsconfig.json",
+        "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
         "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
         "lint": "eslint \"{src,test}/**/*.ts\"",
         "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
@@ -58,6 +63,9 @@
             "^.+\\.(t|j)s$": "ts-jest"
         }
     },
+    "dependencies": {
+        "fast-alfred": "^2.0.1"
+    },
     "devDependencies": {
         "@commitlint/cli": "^19.2.2",
         "@commitlint/config-conventional": "^19.2.2",
@@ -70,6 +78,7 @@
         "@total-typescript/ts-reset": "^0.5.1",
         "@trivago/prettier-plugin-sort-imports": "^4.3.0",
         "@types/jest": "^29.5.12",
+        "@types/node": "^20.14.2",
         "@typescript-eslint/eslint-plugin": "^7.7.0",
         "@typescript-eslint/parser": "^7.7.0",
         "eslint": "^8.57.0",
@@ -91,6 +100,7 @@
         "ts-jest": "^29.1.2",
         "ts-loader": "^9.2.3",
         "ts-node": "^10.9.1",
+        "tsc-alias": "^1.8.10",
         "tsconfig-paths": "^4.2.0",
         "typescript": "^5.4.5"
     },

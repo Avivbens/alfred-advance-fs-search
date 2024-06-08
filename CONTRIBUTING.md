@@ -6,12 +6,28 @@ Thank you for your interest in contributing to `alfred-advance-fs-search`! We we
 
 To get started, follow these steps:
 
-1. Install dependencies with `npm ci`
+1. Fork the repository
+1. Clone your forked repository
+1. Install dependencies with `npm ci --no-fund --no-audit --no-progress`
 1. Make changes
-1. Test your changes
-1. Add tests if needed
-1. Submit a pull request against the `master` branch
-1. Ask for a review
+1. Test your changes locally:
+
+```bash
+npx fast-alfred -t $(cat package.json | jq -r '.version')
+(cd esbuild && open alfred-advance-fs-search.alfredworkflow)
+```
+
+6. Review your changes with your Alfred app
+
+### Consistent Development Environment :ninja:
+
+You can use the following command, in order to trigger build & pack for each save :sparkles:
+
+```bash
+find ./src -type f -name "*.ts" | entr -s "npx fast-alfred -t $(cat package.json | jq -r '.version')"
+```
+
+<br>
 
 ## Commit Message Guidelines
 
