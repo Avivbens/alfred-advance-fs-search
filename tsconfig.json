@@ -23,7 +23,12 @@
         "strictNullChecks": true,
         "strictPropertyInitialization": false,
         "target": "ES2021",
-        "useUnknownInCatchVariables": false
+        "useUnknownInCatchVariables": false,
+        "paths": {
+            "@services/*": ["src/services/*"],
+            "@models/*": ["src/models/*"],
+            "@common/*": ["src/common/*"]
+        }
     },
     "ts-node": {
         "require": ["tsconfig-paths/register"]

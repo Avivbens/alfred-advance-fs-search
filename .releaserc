@@ -1,6 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/semantic-release.json",
-    "repositoryUrl": "https://github.com/Avivbens/alfred-advance-fs-search.git",
+    "repositoryUrl": "https://github.com/alfred-advance-fs-search.git",
     "branches": [
         "+([0-9])?(.{+([0-9]),x}).x",
         "master",
@@ -25,18 +25,35 @@
                 "changelogFile": "CHANGELOG.md"
             }
         ],
-        "@semantic-release/npm",
+        [
+            "@semantic-release/exec",
+            {
+                "prepareCmd": "npx fast-alfred -t ${nextRelease.version}"
+            }
+        ],
         [
             "@semantic-release/git",
             {
                 "assets": [
                     "package.json",
                     "package-lock.json",
+                    "info.plist",
                     "CHANGELOG.md"
                 ],
                 "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
             }
         ],
-        "@semantic-release/github"
+        [
+            "@semantic-release/github",
+            {
+                "assets": [
+                    {
+                        "path": "./esbuild/alfred-advance-fs-search.alfredworkflow",
+                        "label": "alfred-advance-fs-search.alfredworkflow",
+                        "name": "alfred-advance-fs-search.alfredworkflow"
+                    }
+                ]
+            }
+        ]
     ]
 }
