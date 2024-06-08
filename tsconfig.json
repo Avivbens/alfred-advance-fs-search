@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "baseUrl": "./",
+        "declaration": true,
+        "declarationMap": true,
+        "emitDecoratorMetadata": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "forceConsistentCasingInFileNames": true,
+        "incremental": false,
+        "lib": ["ES2021"],
+        "module": "Node16",
+        "noFallthroughCasesInSwitch": false,
+        "noImplicitAny": true,
+        "outDir": "./lib",
+        "removeComments": false,
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "strictBindCallApply": true,
+        "strictNullChecks": true,
+        "strictPropertyInitialization": false,
+        "target": "ES2021",
+        "useUnknownInCatchVariables": false
+    },
+    "ts-node": {
+        "require": ["tsconfig-paths/register"]
+    },
+    "exclude": ["node_modules"],
+    "include": ["src/**/*"]
+}
