@@ -64,7 +64,7 @@
         }
     },
     "dependencies": {
-        "fast-alfred": "^2.0.1"
+        "fast-alfred": "^2.1.0"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.2.2",
