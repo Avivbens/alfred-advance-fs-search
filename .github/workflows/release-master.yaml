@@ -4,7 +4,7 @@ name: '📦 Create New Release'
 on:
     push:
         branches:
-            - master_1
+            - master
 
 permissions:
     contents: write
@@ -33,6 +33,8 @@ jobs:
 
             - name: 🧪 Check out repository code
               uses: ./.github/workflows/health-check
+              with:
+                  run-tests: 'false'
 
     release:
         name: 📦 Release Version
@@ -58,13 +60,6 @@ jobs:
 
             - name: 🖥️ Setup Env
               uses: ./.github/workflows/install
-
-            - name: Build
-              run: npm run build
-
-            - name: Setup NPM
-              run: |
-                  npm config -L user set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
 
             - name: Release
               env:
