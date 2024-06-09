@@ -81,6 +81,7 @@ import { searchInFileSystem } from '@services/search.service'
             arg: path,
             icon: { path: icon },
             uid: path,
+            type: 'file:skipcheck',
         }
     })
 
