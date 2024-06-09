@@ -16,11 +16,6 @@
 
 Search over your file system with [Alfred](https://www.alfredapp.com/).
 
-## Usage
-
-1. Configure your search settings over the workflow settings.
-1. Use the keywords you've configured to open the results via VSCode / your selected Terminal ✨
-
 ### Install via GitHub Releases :sparkles:
 
 ```bash
@@ -30,6 +25,11 @@ download_url=$(curl -s "https://api.github.com/repos/$repo_name/releases/latest"
 curl -fsSLk $download_url -o ~/Desktop/alfred-advance-fs-search.alfredworkflow
 open ~/Desktop/alfred-advance-fs-search.alfredworkflow
 ```
+
+## Usage
+
+1. Configure your search settings over the workflow settings.
+1. Use the keywords you've configured to open the results via VSCode / your selected Terminal ✨
 
 ## Configuration
 
