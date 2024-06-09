@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.0...v1.1.1) (2024-06-09)
+
+
+### Bug Fixes
+
+* add `uid` to allow alfred knowledge ([7604d83](https://github.com/Avivbens/alfred-advance-fs-search/commit/7604d8370d24e8c88220f44524fd57acd4be60e8))
+
 # [1.1.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.0.2...v1.1.0) (2024-06-09)
 
 
