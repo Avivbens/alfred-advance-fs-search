@@ -19,6 +19,12 @@ export interface SearchOptions {
 
     /**
      * @description
+     * The paths to force include in the search results
+     */
+    forceInclude?: string[]
+
+    /**
+     * @description
      * The paths to exclude from the search
      */
     excludePaths?: (string | RegExp)[]

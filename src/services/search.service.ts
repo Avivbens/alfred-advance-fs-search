@@ -5,12 +5,34 @@ import type { FileSearch } from '@models/file-search.model'
 import type { SearchOptions } from '@models/search-options.model'
 
 export async function searchInFileSystem(options: SearchOptions): Promise<FileSearch[]> {
-    const { name, type, excludeGit, excludeHidden, excludeNodeModules, excludePaths, onlyIn, gitReposOnly } = options
-    const filteredRootPaths =
-        onlyIn?.filter((path) => {
-            const entityName = basename(path)
-            return entityName.includes(name)
-        }) ?? []
+    const {
+        name,
+        type,
+        excludeGit,
+        excludeHidden,
+        excludeNodeModules,
+        excludePaths,
+        onlyIn,
+        forceInclude,
+        gitReposOnly,
+    } = options
+
+    const forceIncludeMap = new Set(forceInclude ?? [])
+
+    /**
+     * Handle the case when we need to search only in the root paths and force include some paths
+     */
+    const filterFunction = (path: string) => {
+        const entityName = basename(path)
+        return entityName.includes(name)
+    }
+
+    const filteredForced = forceInclude?.filter(filterFunction) ?? []
+    const filteredRootPaths = onlyIn?.filter(filterFunction) ?? []
+
+    /**
+     * -------------------------------
+     */
 
     const kind = type === 'file' ? 'kind:file' : type === 'folder' ? 'kind:folder' : ''
     const onlyInStr = onlyIn?.map((path) => `-onlyin ${path}`).join(' ')
@@ -18,9 +40,17 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
     const query = `mdfind ${kind} -name "${name}" ${onlyInStr ?? ''}`
     const { stdout } = await execPromise(query)
 
-    const parsedQueryRes = stdout.split('\n').filter(Boolean).concat(filteredRootPaths)
+    const parsedQueryRes = stdout.split('\n').filter(Boolean)
+    const uniqueParsedQueryRes = Array.from(new Set([...filteredForced, ...filteredRootPaths, ...parsedQueryRes]))
 
-    const filtered = parsedQueryRes.filter((path) => {
+    const filtered = uniqueParsedQueryRes.filter((path) => {
+        /**
+         * Force include the path even if it's bypassing exclude settings
+         */
+        if (forceIncludeMap.has(path)) {
+            return true
+        }
+
         const isExcluded = excludePaths?.some((excludePath) => new RegExp(excludePath).test(path))
         if (isExcluded) {
             return false
@@ -61,6 +91,13 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
      * Handle the case when we need to search only in git repositories
      */
     const gitResPrm = res.map(async ({ path, type }) => {
+        /**
+         * Force include the path even if it's bypassing the git check
+         */
+        if (forceIncludeMap.has(path)) {
+            return { path, type }
+        }
+
         if (type === 'file') {
             return null
         }

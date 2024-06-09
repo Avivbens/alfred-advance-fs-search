@@ -26,6 +26,10 @@ import { searchInFileSystem } from '@services/search.service'
         defaultValue: [],
         parser: pathsParser,
     })
+    const forceInclude = alfredClient.env.getEnv(Variables.FORCE_INCLUDE, {
+        defaultValue: [],
+        parser: pathsParser,
+    })
     const excludePaths = alfredClient.env.getEnv(Variables.EXCLUDE_PATHS, {
         defaultValue: [],
         parser: pathsParser,
@@ -54,6 +58,7 @@ import { searchInFileSystem } from '@services/search.service'
         name: input,
         type: targetType,
         onlyIn,
+        forceInclude,
         excludePaths,
         /*  */
         excludeGit,

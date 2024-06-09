@@ -537,6 +537,27 @@ https://github.com/Avivbens/alfred-advance-fs-search</string>
         <key>config</key>
         <dict>
           <key>default</key>
+          <string></string>
+          <key>required</key>
+          <false></false>
+          <key>trim</key>
+          <true></true>
+          <key>verticalsize</key>
+          <integer>6</integer>
+        </dict>
+        <key>description</key>
+        <string>These paths would be shown even if other settings excluded them ✨</string>
+        <key>label</key>
+        <string>Paths to force include</string>
+        <key>type</key>
+        <string>textarea</string>
+        <key>variable</key>
+        <string>force_include</string>
+      </dict>
+      <dict>
+        <key>config</key>
+        <dict>
+          <key>default</key>
           <true></true>
           <key>required</key>
           <false></false>
