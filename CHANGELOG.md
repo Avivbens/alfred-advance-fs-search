@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.0.2...v1.1.0) (2024-06-09)
+
+
+### Features
+
+* support `forceInclude` option to force include paths 🚀 ([6383d6c](https://github.com/Avivbens/alfred-advance-fs-search/commit/6383d6c283f81a7da420d142436ec082a8873112))
+
 ## [1.0.2](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.0.1...v1.0.2) (2024-06-09)
 
 
