@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.0.1...v1.0.2) (2024-06-09)
+
+
+### Bug Fixes
+
+* use `basename` to avoid all path search for input paths ([82ad9d1](https://github.com/Avivbens/alfred-advance-fs-search/commit/82ad9d1c544cc71f4d2f6c4bf1ed705291ccacfe))
+
 ## [1.0.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.0.0...v1.0.1) (2024-06-08)
 
 

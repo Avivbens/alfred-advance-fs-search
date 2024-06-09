@@ -1,6 +1,6 @@
 {
     "name": "alfred-advance-fs-search",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Alfred workflow to search files in the file system & open them with a variety of applications",
     "keywords": [
         "alfred",
