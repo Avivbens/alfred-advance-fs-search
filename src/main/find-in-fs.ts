@@ -80,10 +80,11 @@ import { searchInFileSystem } from '@services/search.service'
             subtitle: path,
             arg: path,
             icon: { path: icon },
+            uid: path,
         }
     })
 
     const sliced = items.slice(0, sliceAmount)
 
-    alfredClient.output({ items: sliced, cache: { seconds: 60 } })
+    alfredClient.output({ items: sliced, cache: { seconds: 60 * 20 } })
 })()
