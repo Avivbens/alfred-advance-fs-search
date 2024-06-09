@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.1...v1.1.2) (2024-06-09)
+
+
+### Bug Fixes
+
+* support `type:file` to allow finder actions ([2fd6293](https://github.com/Avivbens/alfred-advance-fs-search/commit/2fd62930a8cf8da8a0ec41159c9c27f65e481463))
+
 ## [1.1.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.0...v1.1.1) (2024-06-09)
 
 
