@@ -1,11 +1,16 @@
 import { readdir, stat } from 'node:fs/promises'
+import { basename } from 'node:path'
 import { execPromise } from '@common/utils'
 import type { FileSearch } from '@models/file-search.model'
 import type { SearchOptions } from '@models/search-options.model'
 
 export async function searchInFileSystem(options: SearchOptions): Promise<FileSearch[]> {
     const { name, type, excludeGit, excludeHidden, excludeNodeModules, excludePaths, onlyIn, gitReposOnly } = options
-    const filteredRootPaths = onlyIn?.filter((path) => path.includes(name)) ?? []
+    const filteredRootPaths =
+        onlyIn?.filter((path) => {
+            const entityName = basename(path)
+            return entityName.includes(name)
+        }) ?? []
 
     const kind = type === 'file' ? 'kind:file' : type === 'folder' ? 'kind:folder' : ''
     const onlyInStr = onlyIn?.map((path) => `-onlyin ${path}`).join(' ')

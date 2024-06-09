@@ -15,23 +15,20 @@ import { searchInFileSystem } from '@services/search.service'
     /**
      * Advanced options
      */
+    const pathsParser = (data: string) =>
+        data
+            .trim()
+            .split('\n')
+            .filter(Boolean)
+            .map((path) => path.replace('~', homedir()))
+
     const onlyIn = alfredClient.env.getEnv(Variables.ONLY_IN, {
         defaultValue: [],
-        parser: (data) =>
-            data
-                .trim()
-                .split('\n')
-                .filter(Boolean)
-                .map((path) => path.replace('~', homedir())),
+        parser: pathsParser,
     })
     const excludePaths = alfredClient.env.getEnv(Variables.EXCLUDE_PATHS, {
         defaultValue: [],
-        parser: (data) =>
-            data
-                .trim()
-                .split('\n')
-                .filter(Boolean)
-                .map((path) => path.replace('~', homedir())),
+        parser: pathsParser,
     })
 
     const excludeGit = alfredClient.env.getEnv(Variables.EXCLUDE_GIT, {
