@@ -38,7 +38,7 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
     const onlyInStr = onlyIn?.map((path) => `-onlyin ${path}`).join(' ')
 
     const query = `mdfind ${kind} -name "${name}" ${onlyInStr ?? ''}`
-    const { stdout } = await execPromise(query)
+    const { stdout } = await execPromise(query, { maxBuffer: 10_000_000 })
 
     const parsedQueryRes = stdout.split('\n').filter(Boolean)
     const uniqueParsedQueryRes = Array.from(new Set([...filteredForced, ...filteredRootPaths, ...parsedQueryRes]))
