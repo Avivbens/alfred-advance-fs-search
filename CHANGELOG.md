@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.2...v1.1.3) (2024-06-10)
+
+
+### Bug Fixes
+
+* allocate more size to `stdout` - resolve `ERR_CHILD_PROCESS_STDIO_MAXBUFFER` issue with large query results ([6536040](https://github.com/Avivbens/alfred-advance-fs-search/commit/65360406b2331c48024320d11c0873a5853e6e10))
+
 ## [1.1.2](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.1...v1.1.2) (2024-06-09)
 
 
