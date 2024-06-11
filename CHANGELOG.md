@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.3...v1.2.0) (2024-06-11)
+
+
+### Features
+
+* support `glob` form for forced paths ([3e5c948](https://github.com/Avivbens/alfred-advance-fs-search/commit/3e5c9484f3304e06ea2a866f259e8dbac3a2019c))
+
 ## [1.1.3](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.2...v1.1.3) (2024-06-10)
 
 
