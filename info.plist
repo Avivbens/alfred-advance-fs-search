@@ -525,7 +525,7 @@ https://github.com/Avivbens/alfred-advance-fs-search</string>
           <integer>6</integer>
         </dict>
         <key>description</key>
-        <string>Set paths to exclude from the results</string>
+        <string>Set paths to exclude from the results, in JS RegExp form</string>
         <key>label</key>
         <string>Paths to exclude</string>
         <key>type</key>
@@ -546,7 +546,7 @@ https://github.com/Avivbens/alfred-advance-fs-search</string>
           <integer>6</integer>
         </dict>
         <key>description</key>
-        <string>These paths would be shown even if other settings excluded them ✨</string>
+        <string>These paths would be shown even if other settings excluded them ✨ Could be in glob form</string>
         <key>label</key>
         <string>Paths to force include</string>
         <key>type</key>
