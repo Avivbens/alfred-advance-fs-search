@@ -15,7 +15,7 @@ ${homepage}
 module.exports = {
     workflowMetadata: {
         name: 'Search File System',
-        category: 'Productivity',
+        category: 'Tools',
         createdby: author.name,
         webaddress: homepage,
         description,

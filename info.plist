@@ -5,7 +5,7 @@
     <key>bundleid</key>
     <string>com.alfredapp.search-file-system</string>
     <key>category</key>
-    <string>Productivity</string>
+    <string>Tools</string>
     <key>connections</key>
     <dict>
       <key>25207757-A5EF-4D58-9006-05FC11CBBF2E</key>
@@ -18,7 +18,7 @@
           <key>modifiersubtext</key>
           <string></string>
           <key>vitoclose</key>
-          <false></false>
+          <true></true>
         </dict>
       </array>
       <key>ADEAB6EF-E3CB-4923-ABD2-575E4BEE8C01</key>
@@ -31,7 +31,7 @@
           <key>modifiersubtext</key>
           <string></string>
           <key>vitoclose</key>
-          <false></false>
+          <true></true>
         </dict>
       </array>
       <key>DBBE5B97-8BFF-46E6-AF37-9249B8E983F1</key>
