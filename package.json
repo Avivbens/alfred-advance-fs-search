@@ -31,7 +31,6 @@
         "lint": "eslint \"{src,test}/**/*.ts\"",
         "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
         "prepare": "husky || exit 0",
-        "prepublish": "npm run build",
         "test": "jest",
         "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
     },
