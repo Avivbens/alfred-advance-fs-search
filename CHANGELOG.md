@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.2.1...v1.3.0) (2024-06-11)
+
+
+### Features
+
+* support no close after opening entity ([94d03af](https://github.com/Avivbens/alfred-advance-fs-search/commit/94d03af5901736860ce1dbfecb31087d0e68f26c))
+
 ## [1.2.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.2.0...v1.2.1) (2024-06-11)
 
 
