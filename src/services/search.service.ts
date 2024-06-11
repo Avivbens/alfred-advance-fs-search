@@ -1,3 +1,4 @@
+import { glob } from 'glob'
 import { readdir, stat } from 'node:fs/promises'
 import { basename } from 'node:path'
 import { execPromise } from '@common/utils'
@@ -17,7 +18,8 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
         gitReposOnly,
     } = options
 
-    const forceIncludeMap = new Set(forceInclude ?? [])
+    const forceIncludedPaths = await glob(forceInclude ?? [])
+    const forceIncludeMap = new Set(forceIncludedPaths ?? [])
 
     /**
      * Handle the case when we need to search only in the root paths and force include some paths
@@ -27,7 +29,7 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
         return entityName.includes(name)
     }
 
-    const filteredForced = forceInclude?.filter(filterFunction) ?? []
+    const filteredForced = forceIncludedPaths?.filter(filterFunction) ?? []
     const filteredRootPaths = onlyIn?.filter(filterFunction) ?? []
 
     /**
