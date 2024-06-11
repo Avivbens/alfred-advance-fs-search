@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.2.0...v1.2.1) (2024-06-11)
+
+
+### Bug Fixes
+
+* add global error handler ([9219a92](https://github.com/Avivbens/alfred-advance-fs-search/commit/9219a92bb0528b729509b12aa98ada31d93a7b34))
+
 # [1.2.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.1.3...v1.2.0) (2024-06-11)
 
 
