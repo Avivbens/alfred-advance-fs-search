@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.3.0...v1.3.1) (2024-06-14)
+
+
+### Bug Fixes
+
+* bump-up `fast-alfred`, align to Alfred best-practices ([37c29d2](https://github.com/Avivbens/alfred-advance-fs-search/commit/37c29d20370d2490bc1e97bffcc891cab9fc0489))
+
 # [1.3.0](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.2.1...v1.3.0) (2024-06-11)
 
 
