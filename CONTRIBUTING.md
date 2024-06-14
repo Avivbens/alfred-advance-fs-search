@@ -14,7 +14,7 @@ To get started, follow these steps:
 
 ```bash
 npx fast-alfred -t $(cat package.json | jq -r '.version')
-(cd esbuild && open alfred-advance-fs-search.alfredworkflow)
+(cd esbuild && open *.alfredworkflow)
 ```
 
 6. Review your changes with your Alfred app
