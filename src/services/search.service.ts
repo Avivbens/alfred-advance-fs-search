@@ -1,9 +1,10 @@
 import { glob } from 'glob'
 import { readdir, stat } from 'node:fs/promises'
+import { homedir } from 'node:os'
 import { basename } from 'node:path'
-import { execPromise } from '@common/utils'
-import type { FileSearch } from '@models/file-search.model'
-import type { SearchOptions } from '@models/search-options.model'
+import { $ } from 'zurk'
+import type { FileSearch } from '@models/file-search.model.js'
+import type { SearchOptions } from '@models/search-options.model.js'
 
 export async function searchInFileSystem(options: SearchOptions): Promise<FileSearch[]> {
     const {
@@ -37,10 +38,12 @@ export async function searchInFileSystem(options: SearchOptions): Promise<FileSe
      */
 
     const kind = type === 'file' ? 'kind:file' : type === 'folder' ? 'kind:folder' : ''
-    const onlyInStr = onlyIn?.map((path) => `-onlyin ${path}`).join(' ')
+    const onlyInStr = (onlyIn ?? [])?.map((path) => `-onlyin ${path}`).map((path) => path.replace('~', homedir()))
 
-    const query = `mdfind ${kind} -name "${name}" ${onlyInStr ?? ''}`
-    const { stdout } = await execPromise(query, { maxBuffer: 10_000_000 })
+    const { stdout } = await $({
+        args: onlyInStr,
+        spawnOpts: { maxBuffer: 10_000_000 },
+    })`mdfind ${kind} -name "${name}"`
 
     const parsedQueryRes = stdout.split('\n').filter(Boolean)
     const uniqueParsedQueryRes = Array.from(new Set([...filteredForced, ...filteredRootPaths, ...parsedQueryRes]))

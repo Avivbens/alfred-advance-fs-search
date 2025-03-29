@@ -2,9 +2,9 @@ import type { AlfredScriptFilter } from 'fast-alfred'
 import { FastAlfred } from 'fast-alfred'
 import { homedir } from 'node:os'
 import { basename } from 'node:path'
-import { Variables } from '@common/variables'
-import type { SearchOptions } from '@models/search-options.model'
-import { searchInFileSystem } from '@services/search.service'
+import { Variables } from '@common/variables.js'
+import type { SearchOptions } from '@models/search-options.model.js'
+import { searchInFileSystem } from '@services/search.service.js'
 
 ;(async () => {
     const alfredClient = new FastAlfred()
