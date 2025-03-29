@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.3.1...v1.3.2) (2025-03-29)
+
+
+### Bug Fixes
+
+* use `zurk` as command executor - waiting for safe version ([25fd66a](https://github.com/Avivbens/alfred-advance-fs-search/commit/25fd66aef5a9dd64de95862d4391ce47dcbed8bb))
+
 ## [1.3.1](https://github.com/Avivbens/alfred-advance-fs-search/compare/v1.3.0...v1.3.1) (2024-06-14)
 
 
