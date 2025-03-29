@@ -13,6 +13,10 @@ ${homepage}
  * @type {import('fast-alfred').FastAlfredConfig}
  */
 module.exports = {
+    bundlerOptions: {
+        outputFormat: 'esm',
+        esmHelpers: true,
+    },
     workflowMetadata: {
         name: 'Search File System',
         category: 'Tools',
